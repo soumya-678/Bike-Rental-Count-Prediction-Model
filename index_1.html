@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Bike Rental Count</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="registered" placeholder="Registered" required="required" />
+      <input type="text" name="mnth" placeholder="Mnth" required="required" />
+       <input type="text" name="season" placeholder="Season" required="required" />
+        <input type="text" name="hr" placeholder="Hr" required="required" />
+         <input type="text" name="Weekday" placeholder="weekday" required="required" />
+          <input type="text" name="holiday" placeholder="Holiday" required="required" />
+           <input type="text" name="workingday" placeholder="Workingday" required="required" />
+        <input type="text" name="weathersit" placeholder="Weathersit" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+   <img src='bike-image.jpg' alt="Bikes">
+
+ </div>
+
+
+</body>
+</html>
